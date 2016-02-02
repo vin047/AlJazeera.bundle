@@ -1,3 +1,5 @@
+import sys
+
 VIDEO_PREFIX = "/video/aljazeera"
 
 NAME = L('Title')
@@ -55,11 +57,19 @@ def VideoMainMenu():
     oc = ObjectContainer(title1='Menu')
     titre	= 'Live'
     thumb       = R(ICON)
-    # This RMTP URL is not working as the player I tested (plex.tv, PHT or Roku) aren't able to play the stream
-    #video_url   = 'rtmp://aljazeeraflashlivefs.fplive.net:443/aljazeeraflashlive-live?videoId=883816736001&lineUpId=&pubId=665003303001&playerId=751182905001&affiliateId=/aljazeera_eng_med?videoId=883816736001&lineUpId=&pubId=665003303001&playerId=751182905001&affiliateId=%20&live=true'
-    # URL found in the web source.
-    # It looks like the ipad/iphone version
-    video_url_m3u8 = 'http://aljazeera-eng-apple-live.adaptive.level3.net/apple/aljazeera/english/appleman.m3u8'
+
+    sys.path.insert(0, 'youtube-dl')
+    try:
+        # use youtube-dl to resolve Al Jazeera youtube live stream to a m3u8 link
+        # first returned link has itag 96 which is 1080p HD stream
+        import youtube_dl
+        ydl = youtube_dl.YoutubeDL({})
+        result = ydl.extract_info('https://www.youtube.com/watch?v=VBEmqvVPOX4', download=False)
+        video_url_m3u8 = result['url']
+    except:
+        # fallback url
+        video_url_m3u8 = 'http://aljazeera-eng-apple-live.adaptive.level3.net/apple/aljazeera/english/appleman.m3u8'
+
     rating_key  = 'live'
     art         = R(ART)
     summary     = 'Watch Al Jazeera Live'
