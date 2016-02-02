@@ -33,10 +33,10 @@ def Start():
     MediaContainer.art = R(ART)
     DirectoryItem.thumb = R(ICON)
     VideoItem.thumb = R(ICON)
-    
+
     HTTP.CacheTime = CACHE_1HOUR
 
-  
+
 
 
 #### the rest of these are user created functions and
@@ -111,6 +111,3 @@ def Lookup(title, thumb, rating_key, url, art, summary, tagline):
 def PlayAJE(url):
         #return Redirect(url)
         return IndirectResponse(VideoClipObject, key=HTTPLiveStreamURL(url=url))
-
-
-  
