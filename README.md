@@ -1,47 +1,42 @@
 AlJazeera.bundle
 ================
 
+#### FORKED FROM: [https://github.com/lotooo/AlJazeera.bundle](https://github.com/lotooo/AlJazeera.bundle)
+
+#### This fork adds support for iOS devices and also enables HD Live stream. Credit for the original channel goes to [lotooo](https://github.com/lotooo).
+
+#### For the HD stream, makes use of [youtube-dl](https://github.com/rg3/youtube-dl). See instructions below (this is optional and a lower quality stream will be used as a fallback)
+
+---
+
 Channel to watch Al Jazeera live from Plex
 
-Manual Installation: with git
-=============================
-* Open a Terminal
-* Execute the following commands:
+
+## Installation with git
 
 ```bash
-  # mkdir github
-  # cd github
-  # git clone https://github.com/lotooo/AlJazeera.bundle.git
-  # cd
-  # rm -fr $PLEX_FOLDER/Plug-ins/AlJazeera.bundle
-  # ln -s ~/github/AlJazeera.bundle/ $PLEX_FOLDER/Plug-ins/AlJazeera.bundle
+  # cd $PLEX_FOLDER/Plug-ins
+  # git clone https://github.com/vin047/AlJazeera.bundle.git
+  # # For HD playback, do the following:
+  # git submodule init
+  # git submodule update
 ```
-
-* Close the Terminal program
 
 To update the plugin:
-* Open a Terminal
-* Execute the following commands:
 
 ```bash
-  # cd github/AlJazeera.bundle
+  # cd $PLEX_FOLDER/Plug-ins/AlJazeera.bundle
   # git pull
+  # # If you're using the HD stream:
+  # git submodule update
 ```
 
-* Close the Terminal program
+## Manual installation without git
 
-Manual installation : without git
-================================
-* Download zip file from here: https://github.com/lotooo/AlJazeera.bundle/archive/master.zip
+* Download zip file from here: https://github.com/vin047/AlJazeera.bundle/releases/latest
 * Unzip the file
-* Move the unzipped folder to your home directory into a folder called github and rename the unzipped folder to AlJazeera.bundle (removing the -master suffix)
-* Open a Terminal
-* Execute the following commands
+* Move the unzipped bundle to $PLEX_FOLDER/Plug-ins
 
-```bash
-  # rm -fr $PLEX_FOLDER/Plug-ins/AlJazeera.bundle
-  # ln -s ~/github/AlJazeera.bundle/ $PLEX_FOLDER/Plug-ins/AlJazeera.bundle
-```
+To update the plugin:
 
-To update the plugin.
-Redownload the zip file and replace the .bundle file found here: github/AlJazeera.bundle
+* Redownload the zip file and replace the .bundle file
