@@ -58,7 +58,9 @@ def VideoMainMenu():
     titre	= 'Live'
     thumb       = R(ICON)
 
-    sys.path.insert(0, 'youtube-dl')
+    # python's os module isn't supported well, need to use plex framework calls
+    # Core functionality required for HDD access, requires Info.plist to have elevated priviledges
+    sys.path.insert(0, Core.bundle_path + '/Contents/Code/youtube-dl')
     try:
         # use youtube-dl to resolve Al Jazeera youtube live stream to a m3u8 link
         # first returned link has itag 96 which is 1080p HD stream
