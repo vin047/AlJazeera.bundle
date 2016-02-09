@@ -18,6 +18,7 @@ Channel to watch Al Jazeera live from Plex
   # cd $PLEX_FOLDER/Plug-ins
   # git clone https://github.com/vin047/AlJazeera.bundle.git
   # # For HD playback, do the following:
+  # cd AlJazeera.bundle
   # git submodule init
   # git submodule update
 ```
