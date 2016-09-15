@@ -66,7 +66,7 @@ def VideoMainMenu():
         # first returned link has itag 96 which is 1080p HD stream
         import youtube_dl
         ydl = youtube_dl.YoutubeDL({})
-        result = ydl.extract_info('https://www.youtube.com/watch?v=VBEmqvVPOX4', download=False)
+        result = ydl.extract_info('https://www.youtube.com/watch?v=1YnlX4CkPDY', download=False)
         video_url_m3u8 = result['url']
     except:
         # fallback url
